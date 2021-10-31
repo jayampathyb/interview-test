@@ -16,6 +16,7 @@
 		50C5176F272EEB1C0078EF35 /* Test_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5176E272EEB1C0078EF35 /* Test_ProjectTests.swift */; };
 		50C51779272EEB1C0078EF35 /* Test_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C51778272EEB1C0078EF35 /* Test_ProjectUITests.swift */; };
 		50C5177B272EEB1C0078EF35 /* Test_ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5177A272EEB1C0078EF35 /* Test_ProjectUITestsLaunchTests.swift */; };
+		50C51788272F00F60078EF35 /* ItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C51787272F00F60078EF35 /* ItemDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		50C51774272EEB1C0078EF35 /* Test ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Test ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C51778272EEB1C0078EF35 /* Test_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_ProjectUITests.swift; sourceTree = "<group>"; };
 		50C5177A272EEB1C0078EF35 /* Test_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		50C51787272F00F60078EF35 /* ItemDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			children = (
 				50C51758272EEB1A0078EF35 /* Test_ProjectApp.swift */,
 				50C5175A272EEB1A0078EF35 /* ContentView.swift */,
+				50C51787272F00F60078EF35 /* ItemDetails.swift */,
 				50C5175C272EEB1B0078EF35 /* Assets.xcassets */,
 				50C51761272EEB1B0078EF35 /* Persistence.swift */,
 				50C51763272EEB1B0078EF35 /* Test_Project.xcdatamodeld */,
@@ -265,6 +268,7 @@
 			files = (
 				50C51762272EEB1B0078EF35 /* Persistence.swift in Sources */,
 				50C5175B272EEB1A0078EF35 /* ContentView.swift in Sources */,
+				50C51788272F00F60078EF35 /* ItemDetails.swift in Sources */,
 				50C51759272EEB1A0078EF35 /* Test_ProjectApp.swift in Sources */,
 				50C51765272EEB1B0078EF35 /* Test_Project.xcdatamodeld in Sources */,
 			);

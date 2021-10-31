@@ -16,29 +16,35 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     @State private var searchText = ""
+    @State private var isLoading = true
+    
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        TableCell()
+            if true {
+                List {
+                    ForEach(items) { item in
+                        NavigationLink {
+                            ItemDetails()
+                        } label: {
+                            TableCell()
+                        }
                     }
+                    .onDelete(perform: deleteItems)
+                    .searchable(text: $searchText)
                 }
-                .onDelete(perform: deleteItems)
-                .searchable(text: $searchText)
+                .listStyle(.grouped)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
+                    }
+                    ToolbarItem {
+                        Button(action: addItem) {
+                            Label("Add Item", systemImage: "plus")
+                        }
+                    }
             }
-            .listStyle(.grouped)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+            } else {
+                Text("error view")
             }
             Text("Select an item")
         }
