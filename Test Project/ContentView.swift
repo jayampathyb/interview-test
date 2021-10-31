@@ -15,7 +15,7 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    @State private var searchText = ""
     var body: some View {
         NavigationView {
             List {
@@ -27,6 +27,7 @@ struct ContentView: View {
                     }
                 }
                 .onDelete(perform: deleteItems)
+                .searchable(text: $searchText)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
