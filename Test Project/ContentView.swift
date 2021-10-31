@@ -23,12 +23,13 @@ struct ContentView: View {
                     NavigationLink {
                         Text("Item at \(item.timestamp!, formatter: itemFormatter)")
                     } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                        TableCell()
                     }
                 }
                 .onDelete(perform: deleteItems)
                 .searchable(text: $searchText)
             }
+            .listStyle(.grouped)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
@@ -85,5 +86,39 @@ private let itemFormatter: DateFormatter = {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    }
+}
+
+struct TableCell: View {
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Adidas Air Max")
+                    HStack {
+                        Text("$338")
+                        Text("|")
+                            .foregroundColor(.gray)
+                        Text("2X")
+                    }
+                }
+                Spacer()
+                Image(systemName: "flame.circle.fill " )
+                    .resizable()
+                    .frame(width: 100, height: 100,alignment: .center)
+                    .background {
+                        Color.gray
+                    }
+                    .cornerRadius(10)
+            }
+            Text("Description - As the search bar now appears inside a list, it will usually start life hidden – users need to tug the list gently downwards at the top to reveal it. ")
+                .lineLimit(2)
+        }
+        .padding()
+        .background {
+            Color.gray
+                .opacity(0.3)
+        }
+        .cornerRadius(20)
     }
 }
